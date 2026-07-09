@@ -1,0 +1,14 @@
+{
+	"profiles": [
+		{
+			"bundle": "lua-project",
+			"targets": ["package"],
+			"recursive": false
+		},
+		{
+			"bundle": "lua-library",
+			"targets": ["package/*"],
+			"recursive": true
+		}
+	]
+}
