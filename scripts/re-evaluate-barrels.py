@@ -133,5 +133,7 @@ def touch_module(submod_path: str):
 
 for root, dirs, files in os.walk(src_path, topdown=False):
     for dir in dirs:
+        if root.split("/")[-1] == "src":
+            continue
         submod_path = os.path.relpath(os.path.join(root, dir), src_path)
         touch_module(submod_path)
