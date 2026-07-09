@@ -64,6 +64,9 @@ def gen_assignment_lines(entries: dict[str, str], varname: str):
 
 
 def update_module_file(path: str, entries: dict[str, str]):
+    if len(entries) < 1:
+        return
+
     if not os.path.exists(path):
         dirpath = os.path.dirname(path)
         if dirpath:
