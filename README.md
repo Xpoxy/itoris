@@ -32,7 +32,7 @@ $ itoris ~/my-project
 **Note:** itoris will launch your text editor and exit when it exits, to make
 sure itoris will not exit abruptly, set your `$EDITOR` environment variable:
 ```sh
-# .bashrc.json (or your shell profile)
+# .bashrc (or your shell profile)
 export EDITOR="zed --foreground"
 ```
 or run itoris with the `$EDITOR` variable set:
