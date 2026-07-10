@@ -9,6 +9,7 @@ events then runs your `$EDITOR` program.
 - `jq`
 - `libinotify-tools`
 - `python3` to run python scripts under `./scripts`, optional
+- `kdialog` to show directory select dialogs, optional
 
 # Installation
 

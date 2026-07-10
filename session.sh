@@ -20,6 +20,17 @@ if [[ -v 1 ]]; then
 else
 	if [[ -f "$LAST_PROJECT_FILE" ]]; then
 		export PROJECT_ROOT=$(cat "$LAST_PROJECT_FILE")
+	fi
+
+	if command -v "kdialog" &> /dev/null; then
+		SEL_PROJECT_ROOT="$(kdialog --getexistingdirectory "${PROJECT_ROOT:-"$HOME"}" --title "Select project directory")"
+		if [[ -v SEL_PROJECT_ROOT ]]; then
+			export PROJECT_ROOT
+		else
+			echo "Usage: $0 <project-root>" >&2
+			kill $EDITOR_PID
+			exit 1
+		fi
 	else
 		echo "Usage: $0 <project-root>" >&2
 		kill $EDITOR_PID
